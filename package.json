@@ -1,0 +1,45 @@
+{
+  "name": "bot2",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Discord MMO Shop Bot: catalog, inventory, VietQR payments, order fulfillment, feedback, community tools, admin API.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.check.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "deploy:commands": "tsx src/discord/deploy-commands.ts",
+    "lint": "eslint src test"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/rate-limit": "^10.3.0",
+    "discord.js": "^14.16.3",
+    "drizzle-orm": "^0.44.2",
+    "fastify": "^5.6.1",
+    "pino": "^9.7.0",
+    "postgres": "^3.4.7",
+    "qrcode": "^1.5.4",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/node": "^22.10.2",
+    "@types/qrcode": "^1.5.5",
+    "drizzle-kit": "^0.31.4",
+    "eslint": "^9.33.0",
+    "pino-pretty": "^13.1.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.0",
+    "vitest": "^3.2.4"
+  }
+}
